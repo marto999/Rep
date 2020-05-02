@@ -17,21 +17,23 @@ def walk():
     sum=len(x)-1
     print(x)
     print("Pasos:",sum)
-    #plt.plot(x)
-    #plt.show()
+    plt.plot(x)
     return sum
+
 
 
 def main ():
     
-    numSim=100
+    numSim=50
     count=0
     for i in range(numSim):
         print("\nSimulación #",i+1)
         count+=walk()
+      
     print("----------------------------\nTotal:",count)
     print("Prom :",count/numSim)
-
+    
+    plt.show()
 main()
 
 
