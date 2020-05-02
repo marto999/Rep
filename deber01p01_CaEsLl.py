@@ -1,31 +1,28 @@
-import numpy as np
-import matplotlib.pyplot as plt
+# Python code for 1-D random walk. 
+import random 
+import numpy as np 
+import matplotlib.pyplot as plt 
 
-##variables
-x=[]
-y=[]
-steps = [[0,0]]
+# Probability to move up or down 
+prob = [0.05, 0.95] 
 
-##generacion de numeros aleatorios
-n = np.random.randint(4, size=20)
-print (n)
+# statically defining the starting position 
+start = 2
+positions = [start] 
 
-##generacion de movimientos
-mov = {0: (1, 0), 1: (0, 1), 2: (-1, 0), 3: (0, -1)}
+# creating the random points 
+rr = np.random.random(1000) 
+downp = rr < prob[0] 
+upp = rr > prob[1] 
 
 
-##
-for i in n:
-    steps += [[steps[-1][0] + mov[i][0], steps[-1][1] + mov[i][1]]]
-print(steps)
-##
-for e in steps:
-    x += [e[0]]
-    y += [e[1]]
+for idownp, iupp in zip(downp, upp): 
+	down = idownp and positions[-1] > 1
+	up = iupp and positions[-1] < 4
+	positions.append(positions[-1] - down + up) 
 
-##IMPRESION DE LOS GRAFICOS 
-plt.plot(x, y,  color= 'r')
-plt.xlim(-4, 4)
-plt.ylim(-4, 4)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.show()
+# plotting down the graph of the random walk in 1D 
+plt.plot(positions) 
+plt.show() 
+
+help(numpy)
