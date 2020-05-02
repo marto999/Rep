@@ -8,7 +8,7 @@ steps = [[0,0]]
 
 ##generacion de numeros aleatorios
 n = np.random.randint(4, size=20)
-print (n)
+
 
 ##generacion de movimientos
 mov = {0: (1, 0), 1: (0, 1), 2: (-1, 0), 3: (0, -1)}
@@ -16,7 +16,7 @@ mov = {0: (1, 0), 1: (0, 1), 2: (-1, 0), 3: (0, -1)}
 
 ##
 for i in n:
-    steps += [[steps[-1][0] + mov[i][0], steps[-1][1] + mov[i][1]]]
+    steps += [[ steps[-1][0] + mov[i][0], steps[-1][1] + mov[i][1] ]]
 print(steps)
 ##
 for e in steps:
