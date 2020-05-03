@@ -1,45 +1,66 @@
-# Python code for 1-D random walk. 
-import random 
-import numpy as np 
-import matplotlib.pyplot as plt 
+import numpy as np
+import matplotlib.pyplot as plt
+import statistics as stats
+import random
+###graficacion del camino
+    
+def caminosaleatorio():
+    mov = {0: (0, -1), 1: (0, 1), 2: (1, 0), 3: (-1, 0)}
+    walk=[[0,0]]
+    acum=0
+    walkA=[]
 
-# Probability to move up or down 
-prob = [0.05, 0.95] 
+    while(acum!=4):   
+        step=[]    
+        n=random.randint(0,3)
+        step += [[walk[-1][0] + mov[n][0], walk[-1][1] + mov[n][1]]]
+        
+        ##comprobacion del paso anterior en la lista
+        if(step[0] not in walkA):
+            walkA.append(step[0])
+            ##acumulador aumenta este paso para verificar que se pueda o no seguir moviendo
+            acum+=1
+        ##comprabacion del paso inexistente en el camino para sumarlo     
+        if(step[0] not in walk):
+            walk.extend(step)
+            acum=0
+            walkA=[]
+    n = len(walk)
+    
+    x = []
+    y = []
+    for e in walk:
+        x += [e[0]]
+        y += [e[1]]
 
-<<<<<<< HEAD
-# statically defining the starting position 
-start = 2
-positions = [start] 
-=======
-##generacion de numeros aleatorios
-n = np.random.randint(4, size=20)
+    plt.plot(x,y)
 
->>>>>>> 3cb1ee385920cfe7db3e60c7659212bd00d388ac
+    plt.xlim(-20, 20)
+    plt.ylim(-20, 20)
+    plt.gca().set_aspect('equal', adjustable='box')
+    
+    return n
 
-# creating the random points 
-rr = np.random.random(1000) 
-downp = rr < prob[0] 
-upp = rr > prob[1] 
+def simulacion():
+    numSim = 10
+    s = []
+    for i in range(numSim):
+        s += [caminosaleatorio()]
+    w= np.array(s)
+    
+    print('The mean distribution of steps in 1000 simulation is' , stats.median(w))
 
+def impresion():
+    
+    
+    print( 'DEBER 01 SARW CATOTA ESCOBAR LLANGARI')
+    print('')
+    simulacion()
+    print('')
+    
+    print('The second graph is de frecuency - distribution of steps in 1000 simulations')   
 
-<<<<<<< HEAD
-for idownp, iupp in zip(downp, upp): 
-	down = idownp and positions[-1] > 1
-	up = iupp and positions[-1] < 4
-	positions.append(positions[-1] - down + up) 
-=======
-##
-for i in n:
-    steps += [[ steps[-1][0] + mov[i][0], steps[-1][1] + mov[i][1] ]]
-print(steps)
-##
-for e in steps:
-    x += [e[0]]
-    y += [e[1]]
->>>>>>> 3cb1ee385920cfe7db3e60c7659212bd00d388ac
-
-# plotting down the graph of the random walk in 1D 
-plt.plot(positions) 
-plt.show() 
-
-help(numpy)
+    plt.show()
+    
+   
+impresion()
