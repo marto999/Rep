@@ -4,10 +4,10 @@ import numpy as np
 #numrandom = np.random.randint(10000,100000)/100000
 p = np.array([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9])
 formula = p**2*(2-p**2)
-print('Ejercicio #4 - Percolation')
+print('Ejercicio #4 - 2 by 2 Percolation')
 print('Integrantes: Catota-Llangari-Escobar')
-print('---------------------------------------------------------')
-print('Probabilidad teórica de valores entre 0.1 a 0.9:',formula)
+print('---------------------------------------------------------------')
+print('Probabilidad teorica de valores entre 0.1 a 0.9:',formula)
 
 ##PROBABILIDAD 0.1
 def prob():
@@ -48,6 +48,7 @@ def simulacion():
      simul = [calculo() for i in range (sim)]
      a = (np.sum(simul))
      b = a/sim
+     print(b)
      return b
 
 print('Probabilidad simulada 1000 veces para 0.1:',simulacion())
