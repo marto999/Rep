@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 print('Ejercicio #2 - Random Walk 5%')
-print('Integrantes: Catota-EscobarLlangari')
+print('Integrantes: Catota-Escobar-Llangari')
 print('---------------------------------------------------------')
 
 def walk():
@@ -37,6 +37,7 @@ def main ():
     print("----------------------------\nTotal:",count)
     print("Prom :",count/numSim)
     
+    plt.title("Ejercicio 2: Random Walk 5%")
     plt.show()
 main()
 
