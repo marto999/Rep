@@ -52,7 +52,8 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad simulada 1000 veces para 0.1:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.1:')
+print(Simulacion())
 
 ##PROBABILIDAD 0.2
 def prob():
