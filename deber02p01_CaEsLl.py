@@ -1,7 +1,10 @@
-# Python code for 1-D random walk. 
 import random 
 import numpy as np 
 import matplotlib.pyplot as plt 
+
+print('Ejercicio #2 - Random Walk 5%')
+print('Integrantes: Catota-EscobarLlangari')
+print('---------------------------------------------------------')
 
 def walk():
     m=10
