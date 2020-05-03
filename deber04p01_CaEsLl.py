@@ -1,10 +1,15 @@
+# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
+
 
 #numrandom = np.random.randint(10000,100000)/100000
 p = np.array([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9])
 formula = p**2*(2-p**2)
-print('Probabilidad teórica de valores entre 0.1 a 0.9:',formula)
+print('Ejercicio #4 - 2 by 2 Percolation')
+print('Integrantes: Catota-Llangari-Escobar')
+print('---------------------------------------------------------------')
+print('Probabilidad teorica de valores entre 0.1 a 0.9:',formula)
 
 ##PROBABILIDAD 0.1
 def prob():
@@ -47,7 +52,8 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.1:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.1:')
+print(Simulacion())
 
 ##PROBABILIDAD 0.2
 def prob():
@@ -65,7 +71,7 @@ def prob():
         return 1
     elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
@@ -90,7 +96,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.2:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.2:',simulacion())
 
 ##PROBABILIDAD 0.3
 def prob():
@@ -108,11 +114,11 @@ def prob():
         return 1
     elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
-  #  elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1
     else:
         return 0
@@ -133,7 +139,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.3:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.3:',simulacion())
 
 ##PROBABILIDAD 0.4
 def prob():
@@ -151,11 +157,11 @@ def prob():
         return 1
     elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
-   # elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1
     else:
         return 0
@@ -176,7 +182,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.4:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.4:',simulacion())
 
 
 ##PROBABILIDAD 0.5
@@ -222,7 +228,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.5:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.5:',simulacion())
 
 ##PROBABILIDAD 0.6
 def prob():
@@ -240,9 +246,7 @@ def prob():
         return 1
     elif (graf[0][0] == y) and (graf[0][1] == y) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == x) and (graf[1][0] == x) and (graf[1][1] == x):
-        return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
@@ -267,7 +271,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.6:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.6:',simulacion())
 
 ##PROBABILIDAD 0.7
 def prob():
@@ -287,7 +291,7 @@ def prob():
         return 1
     elif (graf[0][0] == x) and (graf[0][1] == x) and (graf[1][0] == x) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
@@ -312,7 +316,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.7:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.7:',simulacion())
 
 ##PROBABILIDAD 0.8
 def prob():
@@ -332,7 +336,7 @@ def prob():
         return 1
     elif (graf[0][0] == x) and (graf[0][1] == x) and (graf[1][0] == x) and (graf[1][1] == x):
         return 1
-    elif (graf[0][0] == x) and (graf[0][1] == y) and (graf[1][0] == x) and (graf[1][1] == y):
+    elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == x):
         return 1    
     elif (graf[0][0] == y) and (graf[0][1] == x) and (graf[1][0] == y) and (graf[1][1] == y):
         return 1    
@@ -357,7 +361,7 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.8:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.8:',simulacion())
 
 ##PROBABILIDAD 0.9
 def prob():
@@ -402,4 +406,8 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad para 0.9:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.9:',simulacion())
+
+plt.plot(p, formula, ':.')
+plt.title("Representacion grafica probabilidad 0.1 a 0.9")
+plt.show()
