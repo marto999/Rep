@@ -48,7 +48,6 @@ def simulacion():
      simul = [calculo() for i in range (sim)]
      a = (np.sum(simul))
      b = a/sim
-     print(b)
      return b
 
 print('Probabilidad simulada 1000 veces para 0.1:',simulacion())
@@ -407,5 +406,5 @@ def simulacion():
 print('Probabilidad simulada 1000 veces para 0.9:',simulacion())
 
 plt.plot(p, formula, ':.')
-plt.title("Representacion grafica probabilidad 0.1 a 0.9 ")
+plt.title("Representacion grafica probabilidad 0.1 a 0.9")
 plt.show()
