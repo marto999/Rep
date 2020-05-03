@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
+
 
 #numrandom = np.random.randint(10000,100000)/100000
 p = np.array([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9])
@@ -50,7 +52,8 @@ def simulacion():
      b = a/sim
      return b
 
-print('Probabilidad simulada 1000 veces para 0.1:',simulacion())
+print('Probabilidad simulada 1000 veces para 0.1:')
+print(Simulacion())
 
 ##PROBABILIDAD 0.2
 def prob():
