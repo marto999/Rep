@@ -1,10 +1,10 @@
 import numpy as np 
 
 import matplotlib.pyplot as plt
-print('Deber 01: Matching experiment')
+print('Deber 03:Develop a random-variate generator for a random variable X with the pdf)
 print('Integrantes: Catota-Escobar-LLangarí')
   
-#1.Develop a random-variate generator for a random variable X with the pdf 
+ 
 x1=np.linspace(-5,0,100)
 fx1=np.e**(2*x1)
 
