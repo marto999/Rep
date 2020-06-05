@@ -1,7 +1,7 @@
 import numpy as np 
 
 import matplotlib.pyplot as plt
-print('Deber 03:Develop a random-variate generator for a random variable X with the pdf)
+print('Deber 03:Develop a random-variate generator for a random variable X with the pdf')
 print('Integrantes: Catota-Escobar-LLangarí')
   
  
