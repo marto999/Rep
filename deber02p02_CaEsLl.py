@@ -5,12 +5,17 @@ Responda por simulación:
 El propietario de un puesto de periódicos recibe 50 ejemplares del periódico El Uninverso cada mañana. La cantidad de ejemplares demandados, X, varía al azar de acuerdo con la siguiente distribución de probabilidad:
 
 f(x)=⎧⎩⎨⎪⎪⎪⎪145,130,133,x=35,36,...,49x=50,51,...59x=60,61,...70
+
 Determine la probabilidad de que el propietario venda todos los ejemplares.
 Determine el número esperado de ejemplares no vendidos por día.
 Un ejemeplar cuesta 50 centavos y se vende a $1.00. Determine el ingreso neto esperado por día.
 '''
 import numpy as np
 
+print('------------------------------------------------------')
+print('Deber 02: Generating random variables (discrete)')
+print('Integrantes: LLANGARI-CATOTA-ESCOBAR')
+print('------------------------------------------------------')
 rep = 10000
 a = []
 b = []
@@ -40,5 +45,8 @@ def SellAll():
     print ('Ingreso promedio neto esperado por dia con 10000 simulaciones: ', ganancias)
 
 SellAll()
+
+
+
 
 
