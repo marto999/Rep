@@ -12,6 +12,7 @@ Un ejemeplar cuesta 50 centavos y se vende a $1.00. Determine el ingreso neto es
 '''
 import numpy as np
 
+<<<<<<< HEAD
 print('------------------------------------------------------')
 print('Deber 02: Generating random variables (discrete)')
 print('Integrantes: LLANGARI-CATOTA-ESCOBAR')
@@ -45,6 +46,44 @@ def SellAll():
     print ('Ingreso promedio neto esperado por dia con 10000 simulaciones: ', ganancias)
 
 SellAll()
+=======
+no_sell = 50 - np.array(range(35, 71))
+print("no sell ", no_sell)
+no_sell[np.where(no_sell < 0)[0]] = 0
+print("")
+print("Sold zeros", no_sell)
+print("")
+px = np.concatenate((np.ones(50-35)*1/45, np.ones(60-50)*1/30, np.ones(71-60)*1/33))
+print('px', px )
+print('px sum',np.sum(px))
+print('tam no sell', len(no_sell))
+print('tam px',len(px))
+
+# unsold estimated value
+np.sum(no_sell * px)
+print('no_sell x px', np.sum(no_sell * px))
+
+pos_all_sell = np.where(no_sell == 0)[0]
+print('probability of sell all',np.sum(px[pos_all_sell]))
+
+print ('np.sum(px[15:])',np.sum(px[15:]))
+
+no_sell_sim = np.random.choice(no_sell, p=px)
+
+Sold = 50 - no_sell_sim
+print('no vendidos simulacion',no_sell_sim)
+print('vendidos', Sold)
+
+#Simulation repetition prom
+#ganancia diaria
+ganancias = Sold*1 - 50*0.50
+print('ganancias', ganancias)
+
+def prob_sold():
+   
+    
+    return 
+>>>>>>> b3f2f1ec2326417b6a9092b12edd6720076c9937
 
 
 
