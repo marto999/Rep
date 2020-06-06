@@ -12,9 +12,6 @@ Un ejemeplar cuesta 50 centavos y se vende a $1.00. Determine el ingreso neto es
 '''
 import numpy as np
 
-import numpy as np
-
-
 no_sell = 50 - np.array(range(35, 71))
 print("no sell ", no_sell)
 no_sell[np.where(no_sell < 0)[0]] = 0
@@ -44,7 +41,8 @@ print('vendidos', Sold)
 
 #Simulation repetition prom
 #ganancia diaria
-Sold*1 - 50*0.50
+ganancias = Sold*1 - 50*0.50
+print('ganancias', ganancias)
 
 def prob_sold():
    
