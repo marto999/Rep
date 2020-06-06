@@ -11,29 +11,34 @@ Un ejemeplar cuesta 50 centavos y se vende a $1.00. Determine el ingreso neto es
 '''
 import numpy as np
 
-no_sell = 50 - np.array(range(35, 71))
+rep = 10000
+a = []
+b = []
+def SellAll():
+    flag1 = 0
 
-no_sell[np.where(no_sell < 0)[0]] = 0
+    while (flag1 < rep):
+        no_sell = 50 - np.array(range(35, 71))
+        no_sell[np.where(no_sell < 0)[0]] = 0
+        px = np.concatenate((np.ones(50-35)*1/45, np.ones(60-50)*1/30, np.ones(71-60)*1/33))
+        pos_all_sell = np.where(no_sell == 0)[0]
+        probsellAll = np.sum(px[pos_all_sell])
+        a.append(probsellAll)
+     
+        no_sell_sim = np.random.choice(no_sell, p=px)
+        b.append(no_sell_sim)
+        flag1 = flag1 + 1
 
-print(no_sell)
+    severithing = np.sum(a)/rep
+    nosellever = np.sum(b)/rep
+    sold = 50 - nosellever
+    ganancias = sold * 1 - 50*0.50
+    #print(a)
+    #print(b)
+    print('Probabilidad de que el propietario venda todos los ejemplares en 10000 simulaciones:', severithing)
+    print('Numero promedio esperado de ejemplares no vendidos por dia en 10000 simulaciones:', nosellever)
+    print ('Ingreso promedio neto esperado por dia con 10000 simulaciones: ', ganancias)
 
-px = np.concatenate((np.ones(50-35)*1/45, np.ones(60-50)*1/30,
-                    np.ones(71-60)*1/33))
-print(px, np.sum(px), len(no_sell), len(px))
-
-# unsold estimated value
-np.sum(no_sell * px)
-
-pos_all_sell = np.where(no_sell == 0)[0]
-print(np.sum(px[pos_all_sell]))
-np.sum(px[15:])
-
-
-no_sell_sim = np.random.choice(no_sell, p=px)
-
-Sold = 50 - no_sell_sim
-no_sell_sim, Sold
+SellAll()
 
 
-# Una sola simulación, hay que repetir muchas veces y promediar
-Sold*1 - 50*0.50  # Utilidad diaria
