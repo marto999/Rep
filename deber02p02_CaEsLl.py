@@ -40,9 +40,9 @@ def SellAll():
     ganancias = sold * 1 - 50*0.50
     #print(a)
     #print(b)
-    print('Probabilidad de que el propietario venda todos los ejemplares en 10000 simulaciones:', severithing)
-    print('Numero promedio esperado de ejemplares no vendidos por dia en 10000 simulaciones:', nosellever)
-    print ('Ingreso promedio neto esperado por dia con 10000 simulaciones: ', ganancias)
+    print('1. Probabilidad de que el propietario venda todos los ejemplares en 10000 simulaciones:', severithing)
+    print('2. Numero promedio esperado de ejemplares no vendidos por dia en 10000 simulaciones:', nosellever)
+    print('3. Ingreso promedio neto esperado por dia con 10000 simulaciones: ', ganancias)
 
 SellAll()
 
