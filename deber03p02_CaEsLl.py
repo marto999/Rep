@@ -1,4 +1,8 @@
 import numpy as np 
+<<<<<<< HEAD
+import matplotlib.pyplot as plt
+=======
+>>>>>>> 340f6cee0c8e6ec072c9be9cf5e9c1bb8591a2a6
 
 import matplotlib.pyplot as plt
 print('Deber 03:Develop a random-variate generator for a random variable X with the pdf')
