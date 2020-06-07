@@ -1,8 +1,5 @@
 import numpy as np 
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
-=======
->>>>>>> 340f6cee0c8e6ec072c9be9cf5e9c1bb8591a2a6
 
 import matplotlib.pyplot as plt
 print('Deber 03:Develop a random-variate generator for a random variable X with the pdf')
@@ -160,6 +157,40 @@ plt.hist(AU1,density=True,facecolor='red', edgecolor='black',bins=100)
 ############################################################################
 #                          Rejection Method                                #
 ############################################################################
+size = 100000
+
+(a, b, c) = (2, 3, 1)
+(a2, b2, c2) = (3, 6, 1)
+
+A = []
+B = []
+
+i = 0
+j=0
+while i < size:
+    x_r = a + (b - a) * np.random.rand()
+    y_r = c * np.random.rand()
+
+    if y_r < f(x_r):  
+        A += [x_r]  
+        i += 1
+               
+while j < size:
+    x2_r = a2 + (b2 - a2) * np.random.rand()
+    y2_r = c2 * np.random.rand()
+
+    if y2_r < f2(x2_r):  
+        B += [x2_r]  
+        j += 1
+        
+X=np.concatenate((A, B), axis=None)
+
+plt.subplot(2,2,4)
+plt.plot(x, f(x))
+plt.plot(x2, f2(x2))
+plt.title("Rejection Method")
+plt.hist(X,density=True,facecolor='green', edgecolor='black',bins=100)
+
 
 plt.show()
 
