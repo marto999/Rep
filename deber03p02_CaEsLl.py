@@ -157,42 +157,48 @@ plt.hist(AU1,density=True,facecolor='red', edgecolor='black',bins=100)
 ############################################################################
 #                          Rejection Method                                #
 ############################################################################
-size = 100000
 
-(a, b, c) = (2, 3, 1)
-(a2, b2, c2) = (3, 6, 1)
+size = 1000000
 
-A = []
-B = []
+(a, b, c) = (2, 6, 0.5)
 
-i = 0
+D = []
+D1 = []
+E = []
+E1 = []
+
+
 j=0
-while i < size:
-    x_r = a + (b - a) * np.random.rand()
-    y_r = c * np.random.rand()
 
-    if y_r < f(x_r):  
-        A += [x_r]  
-        i += 1
+    
                
 while j < size:
-    x2_r = a2 + (b2 - a2) * np.random.rand()
-    y2_r = c2 * np.random.rand()
+    x_r = a + (b - a) * np.random.rand()
+    y_r = c * np.random.rand()
+    
+    if y_r < f2(x_r) and y_r < f(x_r):  
+        E += [x_r]  
+        E1 += [y_r] 
 
-    if y2_r < f2(x2_r):  
-        B += [x2_r]  
+        D += [x_r]   
+        D1 += [y_r] 
+         
         j += 1
-        
-X=np.concatenate((A, B), axis=None)
+
+#print('E',E)        
+#print('E1',E1)        
+W=np.concatenate((E,D), axis=None)
+Z=np.concatenate((E1,D1), axis=None)
 
 plt.subplot(2,2,4)
+#plt.plot(W,Z,'.')
 plt.plot(x, f(x))
 plt.plot(x2, f2(x2))
-plt.title("Rejection Method")
-plt.hist(X,density=True,facecolor='green', edgecolor='black',bins=100)
-
-
+plt.hist(W,density=True,facecolor='green', edgecolor='black',bins=100)
 plt.show()
+
+
+
 
 
 
