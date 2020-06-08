@@ -52,8 +52,7 @@ for i in range(len(U)):
 plt.figure()
 fig = plt.gcf()
 fig.canvas.set_window_title('Ejercicio 3')
-mng = plt.get_current_fig_manager()
-mng.window.state('zoomed')
+
 
 plt.subplot(2,2,1)
 plt.plot(x,f(x),linewidth=3)
