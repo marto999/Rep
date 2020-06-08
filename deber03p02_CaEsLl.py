@@ -194,6 +194,7 @@ plt.subplot(2,2,4)
 #plt.plot(W,Z,'.')
 plt.plot(x, f(x))
 plt.plot(x2, f2(x2))
+plt.title("Rejection Method")
 plt.hist(W,density=True,facecolor='green', edgecolor='black',bins=100)
 plt.show()
 
