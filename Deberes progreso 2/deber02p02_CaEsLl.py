@@ -16,7 +16,7 @@ print('------------------------------------------------------')
 print('Deber 02: Generating random variables (discrete)')
 print('Integrantes: LLANGARI-CATOTA-ESCOBAR')
 print('------------------------------------------------------')
-rep = 10000
+rep = 10
 a = []
 b = []
 def SellAll():
@@ -38,7 +38,9 @@ def SellAll():
     nosellever = np.sum(b)/rep
     sold = 50 - nosellever
     ganancias = sold * 1 - 50*0.50
-    #print(a)
+    print(a)
+    print(no_sell)
+    print(pos_all_sell)
     #print(b)
     print('1. Probabilidad de que el propietario venda todos los ejemplares en 10000 simulaciones:', severithing)
     print('2. Numero promedio esperado de ejemplares no vendidos por dia en 10000 simulaciones:', nosellever)
