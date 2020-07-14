@@ -42,7 +42,7 @@ n20=str(100*(len(np.where(np.array(p_values) < 0.05)[0])/len(p_values)))+' %'
 
 p_values = []
 for simul in range(10000):
-    rvs = stats.norm.rvs(loc=5, scale=10, size=(50))
+    rvs =norm.sf(loc=5, scale=10, size=(50))
     p_values += [stats.ttest_1samp(rvs,5.0)[1]]
 
 n50=str(100*(len(np.where(np.array(p_values) < 0.05)[0])/len(p_values)))+' %'
